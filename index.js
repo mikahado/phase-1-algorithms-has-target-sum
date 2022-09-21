@@ -1,5 +1,12 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  for(i = 0; i < array.length; i++) {
+    const complement = target - array[i]
+
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] === complement) return true;
+    }
+  }
+return false
 }
 
 /* 
@@ -8,6 +15,20 @@ function hasTargetSum(array, target) {
 
 /* 
   Add your pseudocode here
+
+  function takes in two parameters (an array of integers, and a target integer)
+    define variable for array
+    define variable for target
+
+    use two iteration trackers, i and j
+    if i is on index 0, have j add all other numbers. 
+      if no sum matches, have i move to index 1
+      repeat until sum matches
+      return true
+      if no sum matches by the end
+      return false
+
+
 */
 
 /*
